@@ -9,6 +9,7 @@ type Book struct {
 	Title string `json:"title"`
 	Author string `json:"author"`
 	ISBN string `json:"isbn"`
+	Description string `json:"description"`
 }
 
 func (b Book) ToJSON() []byte {
@@ -30,7 +31,7 @@ func FromJSON(data []byte) Book {
 
 var Books = []Book{
 	Book{Title:"The Hitchhiker's Guide to Galaxy!", Author: "Douglas Adams", ISBN: "19761981"},
-	Book{Title:"Cloud Native Go!", Author: "D. A. Shah", ISBN: "22092210"}
+	Book{Title:"Cloud Native Go!", Author: "D. A. Shah", ISBN: "22092210"},
 }
 
 func BooksHandleFunc(w http.ResponseWriter, r *http.Request){
